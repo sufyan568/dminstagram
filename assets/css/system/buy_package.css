@@ -1,0 +1,39 @@
+ .stripe-button-el,.stripe-button-el span{
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+    width:100%
+  }
+  .stripe-button-el span{height: 50px;line-height: 50px;}
+  #payment_options button:not(.stripe-button-el),#mollie-payment-button{
+    font-size:14px;
+    font-weight:bold;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    background: #1275ff;
+    background-image: -webkit-linear-gradient(#7dc5ee,#008cdd 85%,#30a2e4);
+    background-image: -moz-linear-gradient(#7dc5ee,#008cdd 85%,#30a2e4);
+    background-image: -ms-linear-gradient(#7dc5ee,#008cdd 85%,#30a2e4);
+    background-image: -o-linear-gradient(#7dc5ee,#008cdd 85%,#30a2e4);
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+    /*margin-top:-2px;*/
+    width: 100%;
+    /*line-height: 50px;*/
+    height: 52px;
+    border-bottom-color:#015e94;
+    color:#fff;
+    border:none;
+    cursor: pointer;
+    display: inline-block;
+  }
+  #mollie-payment-button{line-height: 52px;text-align: center;}
+  #mollie-payment-button:hover{text-decoration: none;}
+
+  #payment_options button:hover:not(.stripe-button-el){ border-bottom-color:#015e94 !important};
+
+ }

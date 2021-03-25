@@ -1,0 +1,2 @@
+textarea.form-control{height: 80px !important;}
+textarea.form-control::placeholder {color: #ccc;}

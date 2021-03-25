@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>XeroIni | User Manual</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.png"> 
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.png" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css"> 
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">  
+      
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    
+</head> 
+
+<body class="body-green">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <i class="fa fa-book"></i>
+                            <span class="text-highlight">XeroIni</span> <span class="text-bold">Docs</span>
+                        </a>
+                    </h1>
+                    
+                </div><!--//branding-->
+                
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Getting started</li>
+                </ol>
+                
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><i class="icon fa fa-paper-plane"></i> Getting started</h1>
+                    <div class="meta"><i class="far fa-clock"></i> Last updated: February 27, 2021</div>
+                </div><!--//doc-header-->
+                <div class="doc-body row">
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+                            <section id="server-section" class="doc-section">
+                                <h2 class="section-title"><a href="#server-section">Configuration</a></h2> <br>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <ul class="list">
+                                                <li>PHP 7.x & mysql v5.x</li>
+                                                <li>Your domain must have https.</li>
+                                                <li>Make sure <strong class="highlight">curl</strong> is enbaled , <strong class="highlight">mbstring</strong> is enabled, <strong class="highlight">set_time_out</strong> is enabled , <strong class="highlight">safe_mode</strong> is off</li>
+                                                <strong class="highlight"> open_base_dir</strong> has no value, <strong class="highlight">allow_url_fopen=1</strong> and <strong class="highlight">mysqli</strong> support is on.</ul>
+                                            </ul>
+                                            <div class="section-block">
+                                                <div class="callout-block callout-success">
+                                                    <div class="icon-holder">
+                                                        <i class="fas fa-info-circle"></i>
+                                                    </div><!--//icon-holder-->
+                                                    <div class="content">
+                                                        <h4 class="callout-title">Better Performance</h4>
+                                                        <p>Set php <strong class="highlight">max_execution_time</strong>, mysql <strong class="highlight">connect_timeout</strong>, mysql <strong class="highlight">wait_timeout</strong> , <strong class="highlight">max_allowed_packet</strong> , <strong class="highlight">max_connections</strong> to long limit possible, so that your server can process script for long time if needed. Also watch “Bulk Message Frequency Settings” video if you like.</p>
+                                                    </div><!--//content-->
+                                                </div><!--//callout-block-->
+                                                <div class="callout-block callout-info">
+                                                    <div class="icon-holder">
+                                                        <i class="fas fa-thumbs-up"></i>
+                                                    </div><!--//icon-holder-->
+                                                    <div class="content">
+                                                        <h4 class="callout-title">Note</h4>
+                                                        <p>If you get <b>404 page not found</b> error then make <b>AllowOverride</b> in your virtual host and check if <b>.htaccess</b> file is uploaded successfully in root or not.</p>
+                                                    </div><!--//content-->
+                                                </div><!--//callout-block-->
+                                            </div>
+
+
+                                        </div>
+                                    </div><!--//row-->
+                            </section>
+
+                            <section id="installation-section" class="doc-section">
+                                <h2 class="section-title"><a href="#installation-section">Installation</a> </h2>
+                                <div id="step1"  class="section-block">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <ol class="list">
+                                                <li><b>Download</b> .zip package</li>
+                                                <li><b>Upload</b> it to your server</li>
+                                                <li><b>Extract</b> the package</li>
+                                                <li>Make sure all files and folder have write permission after you extract because this software have auto update feature and system may need to change or replace any project file during auto update process. If you do not want to use auto update feature then make sure atleast <b>application/install.txt</b>, <b>application/config</b> (folder and child files), <b>application/core</b> (folder and child files), <b>download, upload, upload_caster</b> files have write permission.</li>
+                                                <li>Run the uploaded url via browser (http://yourdomain.com/projectFolder/) and you will find a interface to provide the settings
+                                                    <ul>
+                                                        <li><b>Hostname</b> : database host name / IP (usually localhost)</li>
+                                                        <li><b>Database Name</b> : create a mysql database on your host and write that name here</li>
+                                                        <li><b>Database username</b>  : username of the created database</li>
+                                                        <li><b>Database password</b> : password of the created database</li>
+                                                        <li><b>Admin Panel Login Email</b>: this will be used to login as admin</li>
+                                                        <li><b>Admin Panel Login Password</b> : password to log in as admin</li>
+                                                        <li>Company Name and Company Address</li>
+                                                        <li>Company Phone /  Mobile</li>
+                                                    </ul>
+                                                </li>
+                                                <li>Click install button</li>
+                                                <li>You are done. Log in with your admin username and password and start using.</li>
+                                                <li>IF installtion page appear again after you hit submit and processing done that means system could not delete application/install.txt and you have to delete that file manually.</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="section-block">
+                                                <img title="Installation Page" class="img-fluid" src="assets/images/start/install.png" />
+                                            </div><!--//section-block-->
+                                        </div>
+                                    </div>                                    
+                                </div><!--//section-block-->
+                                <!-- <div id="step2" class="section-block">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h2 class="section-title">Video Tutorial : How to install?</h2>
+                                            <div class="embed-responsive embed-responsive-16by9">
+                                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/BFnirJFgauQ?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+
+                            </section><!--//doc-section-->
+                            <section id="system" class="doc-section">
+                                <div class="section-block">
+                                    <h2 class="section-title"> <a href="#system">System</a></h2>
+                                    <p>
+                                        Here you will get all the system setting that you want to customize as you need. We are offering you as much customization of this system as possible. This section is devided into six sub-section.
+                                    </p>
+                                    <ol class="list">
+                                        <li>Settings</li>
+                                        <li>Social Apps</li>
+                                        <li>Cron Job</li>
+                                        <li>Language Editor</li>
+                                        <li>Addon Manager</li>
+                                        <li>Theme Manager</li>
+                                        <li>Menu manager</li>
+                                        <li>Check Update</li>
+                                    </ol>
+                                    
+                                </div><!--//section-block-->
+                                <div id="settings" class="section-block">
+                                        <h2 class="section-title"><a href="#settings"> Settings</a></h2> <br>
+                                        <p>This section offers you to change settings in these sections: General, Front-end, SMTP, Email, Analytics, Advertisement</p>
+                                        <img class="img-fluid" src="assets/images/settings.png" />
+
+                                    <p> <b>General (Only Admin):</b> <br> </p>
+                                    <p>
+                                        <b>Brand</b> : Here you can setup your app name, company name etc branding information. 
+                                    </p>
+                                    <p>
+                                        <b>Preference</b> : You can set system email function, it can be php mail or you can setup your smtp profile. You can force to use HTTPS and also can enable disable signup system. You can setup system default time zone and locale.
+                                    </p>
+                                    <p>
+                                        <b>Logo & Favicon</b> : Upload your system logo and favicon.
+                                    </p>
+                                       
+                                    <p> <b>Master Password & App access</b> : Set a master password and you can use this password to login as any user (except admin). You can give access to users to use their own Facebook app instead of using your app.</p> 
+                                                                      
+                                    <p>
+                                        <b>Support Desk (extended license)</b> : Extended license provides a support desk to manage user issues. However, you can enable/disable support desk from here.
+                                    </p>
+
+                                     <p>
+                                        <b>File Upload</b> :Control the media upload limit here. The video upload limit is 100MB by default.
+                                    </p>
+
+                                    <p>
+                                        <b>Junk data</b> : System deletes junk data periodically, set the interval in number days to clean system junk data.
+                                    </p>
+                                    
+                                    
+                                    <div class="code-block">
+                                        <img class="img-fluid" src="assets/images/settings1.png" />
+                                    </div><!--//code-block-->                                    
+                                    
+                                    <h6>Front-end (Only Admin) :</h6>
+                                    <ol class="list">
+                                        <li>This awesome software also now have an buli-in eye-catching landing page which is fully dynamic and can be controlled from this settings area.</li>
+                                        <li>You can choose if you want landing page or not. If you select <b>Display Landing Page</b> as No then login page will be the default page.</li>
+                                        <li>If you do not want social links to show up then keep the social links blank.</li>
+                                        <li>If you choose <b>Display Review Block</b> as No then customer review section will be hidden from landing page. Put youtube watch url if you want to show a review video, keep it blank if you do not want it, it will be hidden then.</li>
+                                        <li>If you choose <b>Display Tutorial Block</b> as No then tutorial section will be hidden from landing page. Put your tutorial title,thumbnail url & youtube watch url to affect the landing page.</li>
+                                    </ol>
+                                    <div class="code-block"> 
+                                        <img class="img-fluid" src="assets/images/front_end_1st.png" />
+                                    <!-- </div>
+                                    <div class="code-block"> 
+                                        <img class="img-fluid" src="assets/images/social_settings.png" />
+                                    </div>                                    
+                                    <div class="code-block"> 
+                                        <img class="img-fluid" src="assets/images/front_end_review_settings.png" />
+                                    </div>                                    
+                                    <div class="code-block"> 
+                                        <img class="img-fluid" src="assets/images/front_end_video_settings.png" />
+                                    </div> -->
+
+                                    <div class="code-block">
+                                        <h6>SMTP Settings (System SMTP Email: Only Admin):</h6>
+                                        <ol class="list">
+                                            <li>This is the place to configure system email.</li>
+                                            <li>You can add any SMTP email provider here. There are three stmp types : Default, TLS and SSL. Default option is for non-SSL smtp. You will find your smtp configuration in your cpanel.</li>
+                                            <li>These settings will be used to send system emails like forget password, contact, send notification etc. Adding SMTP is not enough to start sending message using it, you have to enable SMTP email feature from general settings as well.</li>
+
+                                        </ol>
+                                    </div>
+                                    <div class="code-block"> 
+                                        <img class="img-fluid" src="assets/images/start/smtp_settings.png" />
+                                    </div>
+                                    <!-- <div class="code-block">
+                                        <h6>Video Tutorial : How to setup SMTP for registration forget password email sending. </h6>
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cC6RV8OWoTE?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                    </div> -->
+
+                                    <div class="code-block">
+                                        <h6>Email Template (Only Admin)</h6>
+                                        <p>System sends several emails to users for different purposes. Here you can edit the email content to be sent. Some email templates are for extended license only.</p>
+                                    </div>
+                                    <div class="code-block">
+                                        <img class="img-fluid" src="assets/images/start/email_temp_signup_activation.png" />
+                                    </div>                                    
+                                    <div class="code-block">
+                                        <img class="img-fluid" src="assets/images/start/email_temp_reset_password.png" />
+                                    </div>                                    
+                                    <div class="code-block">
+                                        <img class="img-fluid" src="assets/images/start/email_temp_change_password.png" />
+                                    </div>                                    
+                                    <div class="code-block">
+                                        <img class="img-fluid" src="assets/images/start/email_temp_subs_expire_soon.png" />
+                                    </div>                                    
+                                    <div class="code-block">
+                                        <img class="img-fluid" src="assets/images/start/email_temp_subs_expire_tomorow.png" />
+                                    </div>                                    
+                                    <div class="code-block">
+                                        <img class="img-fluid" src="assets/images/start/email_temp_subs_expired.png" />
+                                    </div>                                    
+                                    <div class="code-block">
+                                        <img class="img-fluid" src="assets/images/start/email_temp_paypal_confirmation.png" />
+                                    </div>                                    
+                                    <div class="code-block">
+                                        <img class="img-fluid" src="assets/images/start/email_temp_paypal_new_payment.png" />
+                                    </div>                                    
+                                    <div class="code-block">
+                                        <img class="img-fluid" src="assets/images/start/email_temp_stripe_payment_confirm.png" />
+                                    </div>                                    
+                                    <div class="code-block">
+                                        <img class="img-fluid" src="assets/images/start/email_temp_stripe_new_payment.png" />
+                                    </div>
+                                    <div class="code-block">
+                                        <h6>Analytics (Only Admin):</h6>
+                                        <ol class="list">
+                                            <li>You may need to add analytics scripts like Google analytics or Facebook pixel code in landing page and login page to track visitors. Well we have sorted it out for you</li>
+                                            <li>Simply put the js scripts (with script tag) in the textarea and save and system will automatically embed them in landing page as well as login page</li>
+                                            <li>You can add multiple scripts in single textarea or can put other js in textarea rather than Google or Facebook scripts if you like.</li>
+
+                                        </ol>
+                                    </div>
+                                    <div class="code-block">
+                                        <img class="img-fluid" src="assets/images/start/analytics_settings.png" />
+                                    </div>
+                                    <!-- <div class="code-block">
+                                        <h6>Advertisement (Only Admin):</h6>
+                                        <ol class="list">
+                                            <li>The front end contains diffrent advertisement sections: 970x90 px ( large screen) / 320x100 px (small screen), 300x250 px (all screen), 300x250 px (all screen) and 300x600 px (large screen).</li>
+                                            <li>You can change the advertise here. You can also choose weather you want to show advertise or not.</li>
+                                            <li>If you choose to show advertise then write html code for each section, as for example you can add simply a html  embedded inside a html tag or can add google adsense html code for each section.</li>
+
+                                        </ol>
+                                    
+                                    </div>
+                                    <div class="code-block">
+                                        <img class="img-fluid" src="assets/images/advertisement_settings.png" />
+                                        
+                                    </div>
+                                </div> -->
+                                <!--//section-block-->
+     
+                                <div id="social_apps" class="section-block">
+                                    <div class="code-block">
+                                        <h6 class="section-title"><a href="#social_apps"> Social Apps</a></h6>
+                                        <br>
+                                        <p> In this section you will see list of all social apps like Facebook, Google, etc. This section will help you to customize your social app settings.</p>
+                                        <img class="img-fluid" src="assets/images/social_apps.png" />
+                                    </div><!--//code-block-->
+                                    <div class="code-block">
+                                        <h6>Facebook</h6>
+                                        <p>In this section you will see all your Facebook app settings. You can add a Facebook app settings by clicking the button Add New APP which is placed on almost on the top of this page. You can also edit, delete your apps using the action buttons attatched with each setting lists. After adding your app settings you need to login by clicking the Facebook icon of action list.</p>
+                                        <img class="img-fluid" src="assets/images/facebook_app_settings.png"  />
+                                        <img class="img-fluid" src="assets/images/facebook_app_settings2.png"  />
+                                    </div>
+                                    <div class="code-block">
+                                        <h6>Video Tutorial: Create <a href="https://developers.facebook.com/">Facebook</a> App </h6>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="section-block">
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/NfGpwwI9pVw?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                                                        
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="code-block">
+                                        <a target="_blank" href="https://xeroneit.net/blog/app-approval-instruction-for-xeroini"><img class="img-fluid" src="assets/images/start/app_approval_button.png"  /></a>
+                                    </div>
+                                    <div class="code-block">
+                                        <h6>Google</h6>
+                                        <p>After entering this section you will find all the necessary settings of your current <a href="https://console.developers.google.com"> Google </a> app. Change is as necessary.</p>
+                                        <img class="img-fluid" src="assets/images/google_app_settings.png"  />
+                                    </div>
+                                    <div class="code-block">
+                                        <h6>Video Tutorial: Create <a href="https://console.developers.google.com/">Google</a> App & Get API Keys </h6>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="section-block">
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/1hj0WWEnftU?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                   
+                                
+                               
+                                <!--//section-block-->
+                                <div class="section-block" id="account_import">
+                                    <div class="code-block">
+                                        <h6 class="section-title"> <a href="#account_import">Account Import</a> </h6>
+                                        <br>
+                                        <ol class="list">
+                                            <li>After Completing Facebook API Settings Properly, Now You've to Import your Facebook Account.</li>
+                                            <li>Clicking Import Account Menu will bring you a button named Login with Facebook, Simply Clicking it will start importing your Facebook account</li>
+                                        </ol>
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-12 col-sm-12">
+                                                <div class="screenshot-holder">
+                                                    <img class="img-fluid" src="assets/images/start/account_import_1.png" alt="screenshot">
+                                                </div> 
+                                            </div>                                            
+                                            <div class="col-md-6 col-sm-12 col-sm-12">
+                                                <div class="screenshot-holder">
+                                                    <img class="img-fluid" src="assets/images/start/account_import_2.png" alt="screenshot">
+                                                </div> 
+                                            </div>
+                                        </div>
+                                        <p>Allow the permission as the picture given below and You can choose privary friends or public. It privacy is set to "Friends" the posts will be only visible to your friends. If you set it to "Public" then the posts will be visible to everyone. You should use "Public" for marketing purposes. Allow all the permission it wnats and continue.</p>
+                                        
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-12 col-sm-12">
+                                                <div class="screenshot-holder">
+                                                    <img class="img-fluid" src="assets/images/start/account_import_3.png" alt="screenshot">
+                                                </div> 
+                                            </div>                                            
+                                            <div class="col-md-6 col-sm-12 col-sm-12">
+                                                <div class="screenshot-holder">
+                                                    <img class="img-fluid" src="assets/images/start/account_import_4.png" alt="screenshot">
+                                                </div> 
+                                            </div>
+                                        </div>
+                                        <p>Finally your account is imported now ! You will see your pages. Now the first thing you have to do it enable page for bot connection.</p>
+                                        <div class="callout-block callout-info">
+                                            <div class="icon-holder">
+                                                <i class="fas fa-info-circle"></i>
+                                            </div><!--//icon-holder-->
+                                            <div class="content">
+                                                <h4 class="callout-title">Info</h4>
+                                                <p>Your pages will not be visible in any feature until you enable bot connection for pages.</p>
+                                            </div><!--//content-->
+                                        </div><!--//callout-block-->
+                                        <img src="assets/images/start/account_import_5.png" class="img-fluid" />
+                                    </div>  
+                                </div>
+                                
+                                <div id="cron_job" class="section-block">
+                                    <div class="code-block">
+                                        <h6 class="section-title"> <a href="#cron_job">Cron Job (Only Admin)</a> </h6>
+                                        <br>
+                                        <p>Here all the cron jobs need to setup on server are listed for your application. But first you have to generate api key for your application by clicking the <b>Generate API Key</b>. You can <b>Re-generate</b> your applications api key any time but doing this will require to setup cron job on server again. When you mouse over on the cron job commands you will see a text copy on the right side and by clicking on that text you can copy that cron job.</p>
+                                        
+                                    </div><!--//code-block-->
+                                    <div class="code-block">
+                                        <img src="assets/images/start/cron_job.png" class="img-fluid" />
+                                    </div>
+                                    <div class="code-block">
+                                        <h6>Video Tutorial: How to setup cron job for XeroIni</h6>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="section-block">
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/hUQW55DnJAs?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!--//section-block-->
+                                <div id="language_editor" class="section-block">
+                                    <div class="code-block">
+                                        <h6 class="section-title"><a href="#language_editor">Language Editor (Only Admin)</a> </h6>
+                                        <br>
+                                        <ol class="list">
+                                            <li>It comes with twelve language by default. But you may need to add your own language. So, we are offering you a way to add you own language and translate all the static text to your language.</li>
+                                            <li>In this section you will find all the languages comes with this applications. You can add your language by clicking the button Add New Language placed on the top. You can also delete your language if you fill necessary.</li>
+                                            <li>Next you have to translate the texts on your own language. There are three type of texts. <b>System, Add-ons, 3rd Party</b>. Choose a type and the click on the language you want to translate. After clicking a language you will be redirect on a page and you will find a list of all file. Then click it and a list of text will come in front of you. Now add your translation.</li>
+
+                                        </ol>
+                                    
+                                    </div><!--//code-block-->
+                                    <div class="code-block">
+                                        <img src="assets/images/start/language_dashborad.png" class="img-fluid" />
+                                    </div>
+                                </div><!--//section-block-->
+                                <div id="addon_manager" class="section-block">
+                                    <div class="code-block">
+                                        <h6 class="section-title"><a href="#addon_manager">Addon Manager (Only Admin)</a></h6>
+                                        <br>
+                                        <p>It has some greate <b>add-ons</b>. When you will want to install them then you have to go through this settings. If any add-on is installed then you will find all the installed add-ons here. You will find a button <b>Install Add-on</b> on the top of that page. Click on it and you will be redirect to a page where you have to <b>upload</b> your add-on. Next you have to activate your add-on using your add-on purchase code. You can also delete add-on if you wish from the list.</p>
+                                    </div><!--//code-block-->
+                                    <div class="code-block">
+                                        <img src="assets/images/start/addons_manager.png" class="img-fluid" />
+                                    </div>
+                                    <div class="code-block">
+                                        <img src="assets/images/start/addons_manager2.png" class="img-fluid" />
+                                    </div>  
+                                </div>
+                                <!--//section-block-->
+                                <div id="theme_manager" class="section-block">
+                                    <div class="code-block">
+                                        <h6 class="section-title"><a href="#theme_manager">Theme Manager(Only Admin)</a></h6>
+                                    </div>
+                                    <div class="code-block">
+                                        <img src="assets/images/theme_manager.png" class="img-fluid" />
+                                    </div>
+                                    <div class="code-block">
+                                        <img src="assets/images/start/install_theme.png" class="img-fluid" />
+                                    </div><!--//code-block-->
+                                    <div class="code-block">
+                                        <h6>XeroIni Front-End Theme Development Documentation</h6>
+                                        <p>Majority of you guys are interested in <a target="_blank" href="https://codecanyon.net/item/XeroIni-complete-messenger-marketing-software-for-facebook/24477224?ref=xeroneitbd">XeroIni</a> extended license. Many of you guys already have a successful business leveraging the power of <a target="_blank" href="https://codecanyon.net/item/XeroIni-complete-messenger-marketing-software-for-facebook/24477224?ref=xeroneitbd">XeroIni</a>. Doing business means a powerful and converting sales page. Different people would like to design their sales page in different flow and content. It is not easy for us to meet everyone's requirements and reflect those in a single front-end theme.</p>
+                                        <p>Also many of you customized the front-end and they often reset in <a target="_blank" href="https://codecanyon.net/item/XeroIni-complete-messenger-marketing-software-for-facebook/24477224?ref=xeroneitbd">XeroIni</a> updates. You all want freedom to customize front-end and here you go. Now you can develop your very own <a target="_blank" href="https://codecanyon.net/item/XeroIni-complete-messenger-marketing-software-for-facebook/24477224?ref=xeroneitbd">XeroIni</a> front-end theme (XeroIni v1.2.7). The most interesting part is, you can sell it to others personally or through marketplaces like codecanyon !</p>
+
+                                        <p>You can download this demo theme and start working on to practice and understand. 
+
+                                        </p>
+                                        <a href="https://xeroneit.net/demo/XeroIni_envato_image_codecanyon/XeroIni/theme_development/CustomTheme.zip" class="btn btn-green" target="_blank"><i class="fas fa-download"></i> Demo Theme</a>
+
+                                    </div>
+                                    
+                                    <!--//code-block-->
+
+                                   
+
+                                    <div class="code-block">
+                                        <div class="callout-block callout-success">
+                                            <div class="icon-holder">
+                                                <i class="fas fa-thumbs-up"></i>
+                                            </div><!--//icon-holder-->
+                                            <div class="content">
+                                                <h4 class="callout-title">Note</h4>
+                                                <p>Please don't open support ticket regarding theme development. If you have any issue or need to know anything, comment on the below comment area. We don't provide support for this purpose.</p>
+                                            </div><!--//content-->
+                                        </div><!--//callout-block-->
+                                    </div>
+                                    <div class="code-block">
+                                        <h6>Folder Structure</h6>
+                                        <img src="assets/images/start/folder.png" class="img-fluid" />
+                                    </div>
+                                    <div class="code-block">
+
+                                        <ol class="list">
+                                            <li>Create a folder inside <b>application/views/site/</b> directory. Your folder name should not contain any spaces (Example: CustomTheme).</li>
+                                            <li>Your new theme folder must contain a file named <b>index.php</b> which will be the landing page of XeroIni. At the very top of this <b>index.php</b> file you can mention a name of your theme, description, version, author name and URI like below:</li>
+                                            <pre><code class="language-php">&lt;?php 
+/* 
+Theme Name: CustomTheme 
+Unique Name: CustomTheme 
+Theme URI: https://example.com/theme 
+Author: CustomTheme Author 
+Author URI: https://example.com 
+Version: 1.0 Description: Custom theme description 
+*/
+?&gt;</code></pre>
+                                            <li>Put a thumbnail mage named <b>thumb.png</b> at the root of your theme folder (670x480 dimension preffered)</li>
+                                            <li>You can create a folder named <b>css</b> at the root of your theme folder, where your style files will be located.</li>
+                                            <li>You can create a folder named <b>js</b> at the root of your theme folder, where your javascript files will be located.</li>
+                                            <li>You can create a folder named <b>images</b> at the root of your theme folder, where your images files will be located.</li>
+                                            <li>You can create the below files with specified names. These files will require a theme file named <b>subscription_theme.php</b> to load.</li>
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Page</th>
+                                                            <th>File Name</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Login page</td>
+                                                            <td>login.php</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Sign Up page</td>
+                                                            <td>sign_up.php</td>
+                                                        </tr>                                                    
+                                                        <tr>
+                                                            <td>Account activation page</td>
+                                                            <td>account_activation.php</td>
+                                                        </tr>                                                    
+                                                        <tr>
+                                                            <td>Forgot password page</td>
+                                                            <td>forgot_password.php</td>
+                                                        </tr>                                                    
+                                                        <tr>
+                                                            <td>Password recovery page</td>
+                                                            <td>password_recovery.php</td>
+                                                        </tr>                                                    
+                                                        <tr>
+                                                            <td>Credential check page</td>
+                                                            <td>credential_check.php</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div><!--//table-responsive-->
+                                            <li>You can also create the below files with specified names. These files will require a theme file named <b>theme_front.php</b> to load.</li>
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Page</th>
+                                                            <th>File Name</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Privacy policy page</td>
+                                                            <td>privacy_policy.php</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Terms of use page</td>
+                                                            <td>terms_use.php</td>
+                                                        </tr>                                                         
+                                                        <tr>
+                                                            <td>GDPR complaint page</td>
+                                                            <td>gdpr.php</td>
+                                                        </tr>                                                    
+                                                    </tbody>
+                                                </table>
+                                            </div><!--//table-responsive-->
+
+                                        </ol>
+
+                                    </div>
+                                    <div class="code-block">
+                                        <h6>Facebook Pixel & Google Analytics Code</h6>
+                                        <p>You can include Facebook pixel code provided by system admin into your theme by adding the below code inside your files ( index.php, theme_front.php and subscription_theme.php ) :</p>
+                                        <pre><code class="language-php">&lt;?php  $this->load->view("include/fb_px"); ?></code></pre>
+                                        <p>Similarly you can include Google analytic code by adding the code below :</p>
+                                        <pre><code class="language-php">&lt;?php $this->load->view("include/google_code"); ?></code> </pre>
+                                    </div>
+                                    <div class="code-block">
+                                        <h6>Configuration PHP Variables</h6>
+                                        <p>You can print them inside php tag like</p>
+                                        <pre><code class="language-php">&lt;?php echo $this->config->item('product_name');?></code></pre>
+                                        <p>or assign to a PHP varibale like</p>
+                                        <pre><code class="language-php">&lt;?php $product_name = $this->config->item('product_name');?></code></pre>
+
+                                        <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>PHP Variables</th>
+                                                    <th>Example value</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>$this-&gt;config-&gt;item('product_name')</td>
+                                                    <td>Product name <br><small class="text-danger">XeroIni - Multichannel Marketing Application</small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$this-&gt;config-&gt;item('product_short_name')</td>
+                                                    <td>Product short name <br><small class="text-danger">XeroIni></small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$this-&gt;config-&gt;item('slogan')</td>
+                                                    <td>Product Slogan <br><small class="text-danger">#1 Multichannel Marketing Application</small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$this-&gt;config-&gt;item('institute_address1')</td>
+                                                    <td>Company Name <br><small class="text-danger">Xerone IT</small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$this-&gt;config-&gt;item('institute_address2')</td>
+                                                    <td>Company Address <br><small class="text-danger">Holding No. 127, 1st Floor, Gonok Para</small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$this-&gt;config-&gt;item('institute_mobile')</td>
+                                                    <td>Company Mobile Number <br><small class="text-danger">01729853645</small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$this-&gt;config-&gt;item('institute_email')</td>
+                                                    <td>Company Email Address <br><small class="text-danger">support@XeroIni.com</small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$this-&gt;config-&gt;item('display_video_block')</td>
+                                                    <td>Returns ‘0’ or ‘1’ <br><small class="text-danger">‘0’ means Promo video or Tutorial video block will not be displayed. <br>‘1’ means Promo or Tutorial video block will be displayed.></small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$this-&gt;config-&gt;item('custom_video')</td>
+                                                    <td>Returns video tutorial list in php array format. 
+                                                        <br>
+                                                        <small>
+                                                            <pre><code class="language-php">
+Array
+(
+[0] =&gt; Array
+    (
+        [0] =&gt;https://demo.XeroIni.com/assets/site_new/img/tutorial/blog-1.jpg
+        [1] =&gt; Facebook App Configuration
+        [2] =&gt; https://www.youtube.com/watch?v=6jiNS_4CEug
+    )
+
+[1] =&gt; Array
+    (
+        [0] =&gt;https://demo.XeroIni.com/assets/site_new/img/tutorial/blog-2.jpg
+        [1] =&gt; Page Posting Feature
+        [2] =&gt; https://www.youtube.com/watch?v=6jiNS_4CEug
+    )
+
+)
+
+                                                            </code></pre>
+                                                        </small>
+                                                        <small>
+                                                        0 = video thumbnail url <br>
+                                                        1 = video title <br>
+                                                        2 = youtube url for video tutorial
+                                                        </small>
+                                                        <br>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$this-&gt;config-&gt;item('promo_video')</td>
+                                                    <td>Returns youtube url for promo video. <br><small class="text-danger">https://www.youtube.com/watch?v=wogvTfRYKWw</small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$this-&gt;config-&gt;item('customer_review_video')</td>
+                                                    <td>Returns youtube url for customer review video.<br><small class="text-danger">https://www.youtube.com/watch?v=wogvTfRYKWw</small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$this-&gt;config-&gt;item('display_review_block')</td>
+                                                    <td>Returns ‘0’ or ‘1’ <br><small class="text-danger">‘0’ means customer review block will not be displayed and ‘1’ means customer review block will be displayed.</small>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$this-&gt;config-&gt;item('customer_review')</td>
+                                                    <td>Returns the review of customer in array format
+                                                        <br>
+                                                        <small>
+                                                            <pre><code class="language-php">
+Array
+(
+[0] =&gt; Array
+    (
+        [0] =&gt; Ava Adams
+        [1] =&gt; Artist
+        [2] =&gt; https://demo.XeroIni.com/assets/site_new/img/client/thumb-1.jpg
+        [3] =&gt; Lorem ipsum sit amet, consectetur adipisicing elit. 
+    ),
+
+[1] =&gt; Array
+    (
+        [0] =&gt; John Roger
+        [1] =&gt; Designer
+        [2] =&gt; https://demo.XeroIni.com/assets/site_new/img/client/thumb-2.jpg
+        [3] =&gt; Lorem ipsum sit amet, consectetur adipisicing elit.  consequuntur similique.
+    )
+
+)
+                    </code></pre>
+                                                    </small>    
+                                                    <small>
+                                                    [0] = Reviewer name <br>
+                                                    [1] = Reviewer designation  <br>
+                                                    [2] = Reviewer image url <br>
+                                                    [3] = Review content
+                                                    </small>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$this-&gt;config-&gt;item('enable_signup_form')</td>
+                                                    <td>Returns ‘0’ or ‘1’ <br><small class="text-danger">‘0’ means sign up button will not be displayed in landing page or login page. <br>‘1’ means sign up button will be displayed in landing page or login page.</small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$this-&gt;config-&gt;item('facebook')</td>
+                                                    <td>Returns the Facebook profile url. <br><small class="text-danger">https://www.facebook.com/xeroneitl</small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$this-&gt;config-&gt;item('twitter')</td>
+                                                    <td>Returns twitter profile url. <br><small class="text-danger">https://twitter.com/alaminJwel</small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$this-&gt;config-&gt;item('linkedin')</td>
+                                                    <td>Returns linkedin profile url. <br><small class="text-danger">https://www.linkedin.com/in/alaminjwel</small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$this-&gt;config-&gt;item('youtube')</td>
+                                                    <td>Returns youtube channel url. <br><small class="text-danger">https://www.youtube.com/xeroneit</small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$this-&gt;is_ad_enabled</td>
+                                                    <td>Returns true or false <br><small class="text-danger">true means advertises will be displayed. <br>false means advertises will not be displayed.</small></td>
+                                                </tr>       
+                                                <tr>
+                                                    <td>$this-&gt;is_ad_enabled1</td>
+                                                    <td>Returns true or false. <br><small class="text-danger">true means 970x90 advertise will be displayed. <br>false means 970x90 advertise will not be displayed.</small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$this-&gt;ad_content1</td>
+                                                    <td>Returns the content for 970x90 advertise. <br><small class="text-danger">&lt;img src="https://via.placeholder.com/970x90"&gt;</small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$this-&gt;ad_content1_mobile</td>
+                                                    <td>Returns the content for 320x100 advertise that replaces 970x90 advertise in mobile devices. <br><small class="text-danger">&lt;img src="https://via.placeholder.com/320x100"&gt;</small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$this-&gt;is_ad_enabled2</td>
+                                                    <td>Returns true or false. <br><small class="text-danger">true means 300x250 advertise will be displayed. <br>false means 300x250 advertise will not be displayed.</small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$this-&gt;ad_content2</td>
+                                                    <td>Returns the content for 300x250 advertise. <br><small class="text-danger"><&lt;img src="https://via.placeholder.com/300x250"&gt;</code></small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$this-&gt;is_ad_enabled3</td>
+                                                    <td>Returns true or false. <br><small class="text-danger">true means another 300x250 advertise will be displayed. <br>false means 300x250 another advertise will not be displayed.</small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$this-&gt;ad_content3</td>
+                                                    <td>Returns the content for another 300x250 advertise. <br><small class="text-danger">&lt;img src="https://via.placeholder.com/300x250"&gt;</small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$this-&gt;is_ad_enabled4</td>
+                                                    <td>Returns true or false. <br><small class="text-danger">true means 300x600 advertise will be displayed. <br>false means 300x600 advertise will not be displayed.</small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$this-&gt;ad_content4</td>
+                                                    <td>Returns the content for 300x600 advertise. <br><small class="text-danger">&lt;img src="https://via.placeholder.com/300x600"&gt;</small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$pricing_table_data</td>
+                                                    <td>Returns the content for pricing tables as PHP array. <br>
+                                                    <small><pre> 
+<code class="language-php">
+Array
+(
+[0] =&gt; Array
+    (
+        [id] =&gt; 1
+        [package_name] =&gt; Trial
+        [module_ids] =&gt; 1,2,3
+        [monthly_limit] =&gt; {"1":"1","2":"1","3":"1"}
+        [bulk_limit] =&gt;  {"1":"0","2":"0","3":"0"}
+        [price] =&gt; 12
+        [validity] =&gt; 28
+        [validity_extra_info] =&gt; 4,W
+        [is_default] =&gt; 0
+        [visible] =&gt; 1
+        [highlight] =&gt; 0
+        [deleted] =&gt; 0
+    )
+
+[1] =&gt; Array
+    (
+        [id] =&gt; 2
+        [package_name] =&gt; Everything
+        [module_ids] =&gt; 1,2,3
+        [monthly_limit] =&gt; {"1":"0","2":"0","3":"0"}
+        [bulk_limit] =&gt;  {"1":"0","2":"0","3":"0"}
+        [price] =&gt; 12
+        [validity] =&gt; 28
+        [validity_extra_info] =&gt; 4,W
+        [is_default] =&gt; 0
+        [visible] =&gt; 1
+        [highlight] =&gt; 0
+        [deleted] =&gt; 0
+    )
+)
+
+</code>
+</pre>
+                                                    </small>
+
+                                                    You can access the array and print package modules using list like below :
+                                                    <small>
+        <pre> <code class="language-php">
+&lt;ul&gt;
+&lt;?php 
+    $module_ids=$pack["module_ids"];
+    $monthly_limit=json_decode($pack["monthly_limit"],true);
+    $module_names_array=$this-&gt;basic-&gt;execute_query('SELECT module_name,id FROM modules WHERE FIND_IN_SET(id,"'.$module_ids.'") &gt; 0  ORDER BY module_name ASC');
+
+    foreach ($module_names_array as $row) : ?&gt;
+    &lt;li&gt;
+        &lt;i class="fas fa-circle"&gt;&lt;/i&gt;&amp;nbsp;
+        &lt;?php 
+        $limit=0;
+        $limit=$monthly_limit[$row["id"]];
+
+        if($limit=="0")
+        $limit2="&lt;b&gt;".$this-&gt;lang-&gt;line("unlimited")."&lt;/b&gt;";
+        else$limit2=$limit;
+
+        echo $this-&gt;lang-&gt;line($row["module_name"]);
+        echo " : &lt;b&gt;". $limit2."&lt;/b&gt;"."&lt;br&gt;";
+        ?&gt;
+    &lt;/li&gt;
+    &lt;?php 
+    endforeach; 
+?&gt;
+&lt;/ul&gt;
+        </code>
+        </pre>
+                                                    </small>
+
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        </div>
+                                        <div class="code-block">
+                                            <h6>Page Links</h6>
+                                            <p>You can print them inside php tag like</p>
+                                            <pre><code class="language-php">&lt;?php  echo base_url('home/login'); ?></code></pre>
+                                            <p>Tag or assign to a PHP varibale like</p>
+                                            <pre><code class="language-php">&lt;?php $login_url = base_url('home/login'); ?></code> </pre>
+                                        </div>
+                                        <div class="code-block">
+                                            <div class="table-responsive">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Page Name</th>
+                                                        <th>URL to use</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>login.php</td>
+                                                        <td><code>base_url('home/login')</code></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>sign_up.php</td>
+                                                        <td><code>base_url('home/sign_up')</code></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>account_activation.php</td>
+                                                        <td><code>base_url('home/account_activation')</code></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>forgot_password.php</td>
+                                                        <td><code>base_url('home/forgot_password')</code></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>password_recovery.php</td>
+                                                        <td><code>base_url('home/password_recovery')</code></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>credential_check.php</td>
+                                                        <td><code>base_url('home/credential_check')</code></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>privacy_policy.php</td>
+                                                        <td><code>base_url('home/privacy_policy')</code></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>terms_use.php</td>
+                                                        <td><code>base_url('home/terms_use')</code></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>gdpr.php</td>
+                                                        <td><code>base_url('home/gdpr')</code></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            </div>
+                                        </div>
+                                        <div class="code-block">
+                                            <h6>Load CSS and JS Files</h6>
+                                            <p>In order to load your .css (resides in css folder) or .js (resides in js folder) file you have to use the following formats</p>
+                                            <pre><code class="language-php">&lt;link href="&lt;?php echo base_url('home/xit_load_files/FOLDER_NAME/CSS_FILE_NAME'); ?&gt;" rel="stylesheet"&gt;</code></pre>
+                                            <pre><code class="language-php">&lt;script src="&lt;?php echo base_url('home/xit_load_files/FOLDER_NAME/JS_FILE_NAME'); ?&gt;"&gt;&lt;/script&gt;</code></pre>
+                                        </div>
+                                        <div class="code-block">
+                                            <p>Replace <b>FOLDER_NAME, CSS_FILE_NAME, JS_FILE_NAME</b> with your corresponding folder and file names.</p>
+                                        </div>
+                                        <div class="code-block">
+                                            <h6>Load Image</h6>
+                                            You can load your image file by calling a function like below :
+                                            <pre><code class="language-php">&lt;img src="&lt;?php echo xit_load_images('FOLDER_NAME/IMAGE_FILE_NAME'); ?&gt;"&gt;</code></pre>
+                                            * Replace <b>FOLDER_NAME, IMAGE_FILE_NAME</b> with your corresponding folder and file names.
+                                        </div>
+                                        <div class="code-block">
+                                            <h6>Activating Theme</h6>
+                                            <p>You can activate/delete theme from System > Theme Manager Menu</p>
+                                            <img src="assets/images/start/activate_theme.png" class="img-fluid" />
+                                        </div>
+                                        <div class="code-block">
+                                            <h6>Development Purchase Codes</h6>
+                                            <p>Since you will develop and test theme in your localhost, we are providing  <a target="_blank" href="https://xeroneit.net/blog/XeroIni-development-local-server-master-code">purchase codes for development environment.</a></p>
+                                            <div class="callout-block callout-success">
+                                                <div class="icon-holder">
+                                                    <i class="fas fa-thumbs-up"></i>
+                                                </div><!--//icon-holder-->
+                                                <div class="content">
+                                                    <h4 class="callout-title">Tips</h4>
+                                                    <p>We recommend not to change any form elements into the files login.php, sign_up.php and contact form in index.php file. If you want to change form’s outlook then we recommend to write css for the form elements.</p>
+                                                </div><!--//content-->
+                                            </div><!--//callout-block-->
+                                        </div>
+                                    </div>
+
+                                    
+
+
+                                </div><!--//section-block-->
+                                 
+                                <!--menu manager-->
+                                 <div id="menu_manager" class="section-block">
+                                    <div class="code-block">
+                                        <h6 class="section-title"><a href="#menu_manager">Menu Manager(Only Admin)</a></h6>
+                                    </div>
+                                
+                                    <div class="code-block">
+                                        
+                                    
+                                    
+                                <p>
+                                    With menu manager, you can add additional menus, at the left side menu bar of the Dashboard,
+                                     like contact page, tutorial page, and so on.
+                                </p>
+                                    
+                                    <p>You can add external and internal menus. If you want to add an external menu, you have to provide a link for the menu.
+                                        On the other hand, if you want to add an internal menu, first you have to create a page, 
+                                        then you have to add the page to the menu.
+
+                                    </p>
+                                      
+                                     <p>
+                                      Of course, you can specify who can access the page-- admin or members. 
+                                      You can attach an icon with the menu you have been added to. True, you can edit the menu anytime you want.
+                                    
+                      
+                                    
+                                </p>
+                            </div>
+                               
+
+
+                                    <div class="code-block">
+                                        <img src="assets/images/menu_manager.png" class="img-fluid" />
+                                    </div>
+                                    <div class="code-block">
+                                        <img src="assets/images/create_page.png" class="img-fluid" />
+                                    </div>
+                                </div>
+                                <div class="code-block">
+                                    <img src="assets/images/link_manager.png" class="img-fluid" />
+                                </div>
+                                <div class="callout-block callout-info">
+                                    <div class="icon-holder">
+                                        <i class="fas fa-thumbs-up"></i>
+                                    </div><!--//icon-holder-->
+                                    <div class="content">
+                                        <h4 class="callout-title">Notes</h4>
+                                        <p>The default menus can’t be changed, for it can mess up the whole system.</p>
+                                    </div><!--//content-->
+                                </div><!--//callout-block-->
+                            </div>  
+                                    
+                                    
+                                <!--end menu manager-->
+
+                                <div id="check_update" class="section-block">
+                                    <div class="code-block">
+                                        <h6 class="section-title"><a href="#check_update">Check Update (Only Admin)</a>  </h6>
+                                        <br>
+                                        <p>This section displays your application and add-ons versions. If any update is released from our end then you will see them here. You can update your application and add-ons from here.</p>
+                                    </div>
+                                    <div class="code-block">
+                                        <img src="assets/images/check_updates.png" class="img-fluid" />
+                                    </div>
+                                </div>
+
+                                <div id="subcription" class="section-block">
+                                    <div class="code-block">
+                                        <h6 class="section-title"><a href="#subcription">Subcription</a></h6>
+                                        <br>
+                                        <p>Here you will find all the subscription related settings. This section is devided into six sub-section.</p>
+                                        <ol class="list">
+                                            <li>Package Manager</li>
+                                            <li>User Manager</li>
+                                            <li>Announcement</li>
+                                            <li>Payment Accounts</li>
+                                            <li>Earning Summary</li>
+                                            <li>Transaction Log</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <div id="package_manager" class="section-block">
+                                    <div class="code-block">
+                                        <h6 class="section-title"> <a href="#package_manager">Package Manager (Only Admin)</a></h6> <br>
+                                         <ol class="list">
+                                             <li>In this section you will find all the packages you have created so far. By default there is a "Trail" package. You can not delete this package. If you do not want a trial then edit deafult package's validity to 0 (zero). If you do not want to take money from users then edit the default package's price to "Free".</li>
+                                             <li>You can add your desired package by clicking the button New Package on this page. After clicking this button you will be redirected to another page where you will create your desired package for your user.</li>
+                                             <li>Fill the necessary information for createing a package and check the modules which will be included in your package. Here you will find some modules are checked by default and you can't uncheck them. You can aslo specify modules <b>Usage Limit and Bulk Limit</b>.</li>
+                                             <li>Suppose you want to create a package named "basic" which validity will be 30days, price will be EUR 10 and you want to assign specific modules for this package. In this case you are lucky!! You can add unlimited packages you want including price,validity and modules. You can also put monthly analysis limit each module when you create a package. While you assign limits, 0 (zero) means unlimited.</li>
+                                         </ol>
+                                    </div>
+                                    <div class="code-block">
+                                        <img src="assets/images/start/package_manager.png" class="img-fluid" />
+                                    </div>
+                                    <div class="code-block">
+                                        <img src="assets/images/start/package_new.png" class="img-fluid" />
+                                    </div>
+                                </div>
+                                <div class="section-block" id="user_manager">
+                                    <div class="code-block">
+                                        <h6 class="section-title"><a href="#user_manager">User Manager (Only Admin) </a>  </h6>
+                                        <br>
+                                        <ol class="list">
+                                            <li>This section displays all the users on your application. There are various information about your user. You can edit, delete, change password and see all the activities of every users.</li>
+                                            <li>You can add new user by clicking the button New User on the top. When you will click this button you will be redirected on a new page. There you can create a new user by filling the necessary information. You can specify package and expiry date of a user when you create.</li>
+                                            <li>You can send mail to your users by selecting them from the list. This option will be found after clicking the Options button. This button is located on the top of the list of users. You can also see Login Log and System Dashboard (Extended) by clicking corresponding button.</li>
+                                        </ol>
+                                    </div>
+                                    <div class="code-block">
+                                        <img src="assets/images/start/user_manager.png" class="img-fluid" />
+                                    </div>
+
+                                </div>
+                                <div class="section-block" id="announcement">
+                                    <div class="code-block">
+                                        <h6 class="section-title"> <a href="#announcement">Announcement (Only Admin)</a>  </h6>
+                                        <br>
+                                        <ol class="list">
+                                            <li>This section of your settings helps you to show notification to all your users using this system. You can create notification by clicking the button New Announcement on the top. This button will redirect you to a new page. There you can create a new notification. You can keep it published or as draft.</li>
+                                            <li>Here, you will also mark single anouncement as read or mark all the notifications as read. There are some filters and you can you can also search your notification.</li>
+                                        </ol>
+                                    </div>
+                                    <div class="code-block">
+                                        <img src="assets/images/start/announcement.png" class="img-fluid" />
+                                    </div>                                    
+                                    <div class="code-block">
+                                        <img src="assets/images/start/announcementnew.png" class="img-fluid" />
+                                    </div>                                    
+                                    <div class="code-block">
+                                        <img src="assets/images/start/announcement_notifications.png" class="img-fluid" />
+                                    </div>
+                                </div>
+                                <div class="section-block" id="payment_accounts">
+                                    <div class="code-block">
+                                        <h6 class="section-title"> <a href="#payment_accounts">Payment Accounts (Only Admin & Extended License)</a>  </h6>
+                                        <br>
+                                        <p>
+                                            XeroIni Supports multiple payment gateways. 
+                                            Using the payment gateways, you can take payments
+                                            from your end-users. To enable the payment gateways,
+                                            you have to provide your credentials for the payment gateways.
+                                        </p>
+                                        <p>
+                                            Also, you can enable manual payment. 
+                                            In this case, you have to write manual 
+                                            payment instructions on how your end-users will pay you manually.
+                                        </p>
+                                        <p>
+                                            Of course, you can select your currency here.
+                                        </p>
+                                    </div>
+                                    <div class="code-block">
+                                        <img src="assets/images/payment.png" class="img-fluid" />
+                                    </div>
+                                </div>                                
+
+
+                                <div class="section-block" id="earning_summary">
+                                    <div class="code-block">
+                                        <h6 class="section-title"><a href="#earning_summary">Earning Summary (Only Admin & Extended License)</a> </h6>
+                                        <br>
+                                        <p>This section will show your earning summary. You can see your Life Time Earning, Current Month Earning, Current Year Earning, Earning comparison of consicutive last two years and Top countries of consicutive last two years.</p>
+                                    </div>
+                                    <div class="code-block">
+                                        <img src="assets/images/start/earning_summary.png" class="img-fluid" />
+                                    </div>
+                                </div>
+                                <div class="section-block" id="transactional_log">
+                                    <div class="code-block">
+                                        <h6 class="section-title"><a href="#transactional_log"> Transaction Log (Only Admin & Extended License )</a> </h6>
+                                        <br>
+                                        <p>Here you will find all the transaction occured by your users. You can filter your result by choosing the date range by clicking the button placing on the top of the tansaction list named Choose Date</p>
+                                    </div>
+                                    <div class="code-block">
+                                        <img src="assets/images/start/trasaction_log.png" class="img-fluid" />
+                                    </div>
+                                    <div class="code-block">
+                                        <h6> Manual Payments (Only Admin & Extended License)  </h6>
+                                        <p>If you want to take manual payment from the user then set instruction for manual payment the user can find the details about how they pay to you. After the Manual payment user given it will show pending, until admin approved the manual payment from the user.</p>
+                                    </div>
+                                    <div class="code-block">
+                                        <img src="assets/images/start/manual_payment.png" class="img-fluid" />
+                                    </div>
+                                    <div class="code-block">
+                                        <img src="assets/images/start/manual_transaction.png" class="img-fluid" />
+                                    </div>                                    
+                                    <div class="code-block">
+                                        <img src="assets/images/start/manual_pen.png" class="img-fluid" />
+                                    </div>
+                                </div>
+
+                            </section><!--//doc-section-->
+
+                                
+                            </section><!--//doc-section-->
+                            
+                            </section><!--//doc-section-->
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+	                        
+	                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+                                    
+	                                <a class="nav-link scrollto" href="#server-section">Server Configuration</a>
+                                    <a class="nav-link scrollto" href="#installation-section">Installation</a>
+                                    <nav class="doc-sub-menu nav flex-column">
+                                        <a class="nav-link scrollto" href="#step1">Step One</a>
+                                        <a class="nav-link scrollto" href="#step2">Step Two</a>
+                                    </nav><!--//nav-->
+	                                <a class="nav-link scrollto" href="#system">System</a>
+                                    <nav class="doc-sub-menu nav flex-column">
+                                        <a class="nav-link scrollto" href="#settings">Settings</a>
+                                        <a class="nav-link scrollto" href="#social_apps">Social Apps</a>
+                                        <a class="nav-link scrollto" href="#account_import">Import Account</a>
+                                        <a class="nav-link scrollto" href="#cron_job">Cron Job</a>
+                                        <a class="nav-link scrollto" href="#language_editor">Language Editor</a>
+                                        <a class="nav-link scrollto" href="#addon_manager">Addon Manager</a>
+                                        <a class="nav-link scrollto" href="#theme_manager">Theme Manager</a>
+                                        <a class="nav-link scrollto" href="#menu_manager">Menu manager</a>
+                                        <a class="nav-link scrollto" href="#check_update">Check Update</a>
+                                        
+                                    </nav><!--//nav-->
+                                    
+	                                <a class="nav-link scrollto" href="#subcription">Subcription</a>
+                                    <nav class="doc-sub-menu nav flex-column">
+                                            <a class="nav-link scrollto" href="#package_manager">Package Manager</a>
+                                            <a class="nav-link scrollto" href="#user_manager">User Manager</a>
+                                            <a class="nav-link scrollto" href="#announcement">Announcement</a>
+                                            <a class="nav-link scrollto" href="#payment_accounts">Payment Accounts</a>
+                                            <a class="nav-link scrollto" href="#earning_summary">Earning Summary</a>
+                                            <a class="nav-link scrollto" href="#transactional_log">Transaction Log</a>
+                                    </nav><!--//nav-->
+	                            </nav><!--//doc-menu-->
+	                        
+                        </div>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+        
+
+        
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>      
+    <script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>                                                             
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    
+</body>
+</html> 
+

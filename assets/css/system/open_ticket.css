@@ -1,0 +1,6 @@
+.modal-backdrop, .modal-backdrop.in{
+    display: none;
+  }
+  .note-group-select-from-files {
+    display: none;
+  }

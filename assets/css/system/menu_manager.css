@@ -1,0 +1,8 @@
+.note-toolbar{background:#eee !important;}
+.note-editable{min-height:250px;max-height:800px !important;}
+.note-placeholder{color:#cacaca;}
+.note-btn{padding: 2px 10px !important}
+.dropdown-toggle::after{content:none !important;}
+#searching_page{max-width: 50% !important;}
+#campaign_status{width: 110px !important;}
+@media (max-width: 575.98px) { #searching_page{max-width: 77% !important;} }

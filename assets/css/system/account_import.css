@@ -1,0 +1,61 @@
+.card { padding-top: 0 !important; }
+.card .media-body .media-title { margin-bottom: 0px !important; }
+.card .media-body .page_email { line-height: 12px !important; }
+.card .page_delete { margin-top:10px;margin-right:10px; padding: .1rem .5rem !important; }
+.card .right-button { margin-top:10px;margin-right:10px; padding: .1rem .5rem !important; }
+.card .enable_webhook { margin-top:10px; padding: .1rem .5rem !important; }
+.card .disable_webhook { margin-top:10px; padding: .1rem .5rem !important; }
+.profile-widget-header .delete_account { position: absolute;top:10px;right:10px;}
+.profile-widget .profile-widget-items:after{position: relative;}
+.list-unstyled .media{padding-right:10px;} 
+.btn-circle{margin:0 !important;}
+
+@media (max-width: 575.98px)
+{
+.profile-widget { margin-top: 0 !important; }
+}
+
+.update_account {cursor: pointer;}
+
+.media .page_thumbnail{
+	width: 50px;
+height: auto;
+margin-right: 15px;
+position: relative;
+overflow: hidden;
+}
+.media .page_thumbnail .overlay{
+	position: absolute;
+display: flex;
+align-items: center;
+text-decoration: none;
+font-size: 11px;
+color: #ddd;
+text-align: center;
+height: 100%;
+width: 100%;
+top: 0;
+left: 0;
+background-color: rgba(0,0,0,0.5);
+-webkit-background-color: rgba(0,0,0,0.5);
+-moz-background-color: rgba(0,0,0,0.5);
+-ms-background-color: rgba(0,0,0,0.5);
+-o-background-color: rgba(0,0,0,0.5);
+transform: translateY(-100%);
+-webkit-transform: translateY(-100%);
+-moz-transform: translateY(-100%);
+-ms-transform: translateY(-100%);
+-o-transform: translateY(-100%);
+transition: 0.40s;
+-webkit-transition: 0.40s;
+-moz-transition: 0.40s;
+-ms-transition: 0.40s;
+-o-transition: 0.40s;
+}
+.media .page_thumbnail:hover .overlay{
+transform: translateY(0);
+-webkit-transform: translateY(0);
+-moz-transform: translateY(0);
+-ms-transform: translateY(0);
+-o-transform: translateY(0);
+}

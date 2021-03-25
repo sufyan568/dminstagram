@@ -1,0 +1,20 @@
+.fc-button-group button:focus{
+  outline: none;
+  
+}
+
+.fc-icon-left-single-arrow:after {
+    font-size: 32px !important; 
+    top: -15% !important; 
+}
+
+.fc-icon-right-single-arrow:after {
+    font-size: 32px !important; 
+    top: -15% !important; 
+}
+
+.fc-content{text-align: center !important;}
+.fc-event{display: block !important; }
+.fc-time-grid-event{overflow: none !important;height: auto !important;}
+.fc-time-grid-event img{width:70px !important;height: 50px !important;margin-top:5px;}
+.fc-time-grid-event video{height: 50px !important;margin-top:5px;}
